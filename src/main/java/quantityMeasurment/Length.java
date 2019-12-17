@@ -28,6 +28,11 @@ public class Length {
             return Double.compare(Math.round(this.value* YARD_FEET_MULTIPLIER),that.value) == 0;
         if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.YARDS))
             return Double.compare(this.value,Math.round(that.value* YARD_FEET_MULTIPLIER)) == 0;
+        if(this.unit.equals(Unit.YARDS) && that.unit.equals(Unit.INCH))
+            return Double.compare(Math.round(this.value* YARD_FEET_MULTIPLIER* FEET_INCH_MULTIPLIER),that.value) == 0;
+        if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.YARDS))
+            return Double.compare(this.value,Math.round(that.value* YARD_FEET_MULTIPLIER* FEET_INCH_MULTIPLIER)) == 0;
+
         return false;
     }
 
