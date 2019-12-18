@@ -13,7 +13,7 @@ public class QuantityComparatorTest {
     }
 
     @Test
-    public void given12FeetAnd1InchWithEnum_ShouldreturnEqualLength() {
+    public void given12FeetAnd1InchWithEnum_ShouldReturnEqualLength() {
         QuantityComparator fromFeet = new QuantityComparator(LengthComparision.FEET, 12.0);
         QuantityComparator toInch = new QuantityComparator(LengthComparision.INCH, 1.0);
         Assert.assertTrue(fromFeet.compareTo(fromFeet, toInch));
@@ -50,9 +50,9 @@ public class QuantityComparatorTest {
 
     @Test
     public void givenNullQuantityComparator_ShouldReturnBooleanEquality() {
-        QuantityComparator FromFeet = new QuantityComparator(LengthComparision.INCH, 1.0);
+        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.INCH, 1.0);
         QuantityComparator toInch = null;
-        Assert.assertFalse(FromFeet.equals(toInch));
+        Assert.assertFalse(fromFeet.equals(toInch));
     }
 
 
@@ -72,8 +72,22 @@ public class QuantityComparatorTest {
 
     @Test
     public void givenQuantityComparatorValueType_ShouldReturnBooleanEquality() {
-        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.INCH, 1.0);
+        QuantityComparator fromInch = new QuantityComparator(LengthComparision.INCH, 1.0);
         QuantityComparator toInch = new QuantityComparator(LengthComparision.INCH, 1.0);
-        Assert.assertTrue(fromFeet.equals(toInch));
+        Assert.assertTrue(fromInch.equals(toInch));
+    }
+
+    @Test
+    public void given1FeetAnd1Inch_ShouldReturnNonEquality() {
+        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.FEET, 1.0);
+        QuantityComparator toInch = new QuantityComparator(LengthComparision.INCH, 1.0);
+        Assert.assertFalse(fromFeet.equals(toInch));
+    }
+
+    @Test
+    public void given1InchAnd1Feet_ShouldReturnNonEquality() {
+        QuantityComparator fromInch = new QuantityComparator(LengthComparision.INCH, 1.0);
+        QuantityComparator toFeet = new QuantityComparator(LengthComparision.FEET, 1.0);
+        Assert.assertFalse(fromInch.equals(toFeet));
     }
 }
