@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantityMeasurment.QuantityComparatorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2019-12-18T12:02:13" hostname="admin123-desktop" time="0.007">
+<testsuite name="quantityMeasurment.QuantityComparatorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2019-12-18T13:15:05" hostname="admin123-desktop" time="0.009">
   <properties/>
-  <testcase name="given2InchAndCM_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
+  <testcase name="given2InchAndCM_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.002"/>
   <testcase name="given1InchAndZeroPoint027YardsWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given1FeetAnd2Inch_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given2InchAnd2Point5CM_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given1YardsAnd36InchesWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
+  <testcase name="given1YardsAnd36InchesWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="givenNullQuantityComparator_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="givenQuantityComparatorClassType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given2InchAnd2Inch_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
+  <testcase name="given2InchAnd2Inch_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
   <testcase name="given1FeetAnd12InchWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given1FeetAndZeroPoint33YardsWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given1FeetAnd1Feet_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given1InchAnd1Feet_ShouldReturnNonEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
+  <testcase name="given1FeetAnd1Feet_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
+  <testcase name="given1InchAnd1Feet_ShouldReturnNonEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given1InchAnd1Yards_ShouldReturnNonEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given1FeetAnd1Inch_ShouldReturnNonEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="givenZeroPoint08FeetAnd1InchWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="givenQuantityComparatorObjectType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
+  <testcase name="givenQuantityComparatorObjectType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
   <testcase name="given1FeetAnd1Yard_ShouldReturnNonEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="givenQuantityComparatorValueType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
   <testcase name="given1YardsAnd3FeetWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>

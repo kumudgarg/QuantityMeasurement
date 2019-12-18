@@ -4,10 +4,10 @@ public class QuantityComparator {
 
 
     public double value;
-    public LengthComparision lengthConverter;
+    public QuantityComparision lengthConverter;
 
-    public QuantityComparator(LengthComparision lengthComparision, double value) {
-        this.lengthConverter = lengthComparision;
+    public QuantityComparator(QuantityComparision quantityComparision, double value) {
+        this.lengthConverter = quantityComparision;
         this.value = value;
     }
 
