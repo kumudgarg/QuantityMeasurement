@@ -14,6 +14,12 @@ public enum LengthComparision {
 
     public boolean compareTo(QuantityComparator comparator1, QuantityComparator comparator2)
     {
-       return (Double.compare(comparator1.value*comparator1.lengthConverter.baseUnit,comparator1.value*comparator1.lengthConverter.baseUnit) == 0);
+       return (Double.compare(Math.round(comparator1.value*comparator1.lengthConverter.baseUnit),Math.round(comparator2.value*comparator2.lengthConverter.baseUnit)) == 0);
+    }
+
+    public double AddQuantities(QuantityComparator comparator1, QuantityComparator comparator2)
+    {
+        double addition =  (comparator1.value*comparator1.lengthConverter.baseUnit)+(comparator2.value*comparator2.lengthConverter.baseUnit);
+        return addition;
     }
 }

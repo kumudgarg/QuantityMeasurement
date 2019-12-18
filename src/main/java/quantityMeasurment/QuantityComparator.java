@@ -16,6 +16,11 @@ public class QuantityComparator {
         return lengthConverter.compareTo(converter1 , converter2);
     }
 
+    public double AddQuantities(QuantityComparator comparator1, QuantityComparator comparator2)
+    {
+        return lengthConverter.AddQuantities(comparator1,comparator2);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

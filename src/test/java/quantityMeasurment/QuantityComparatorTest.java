@@ -13,8 +13,8 @@ public class QuantityComparatorTest {
     }
 
     @Test
-    public void given12FeetAnd1InchWithEnum_ShouldReturnEqualLength() {
-        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.FEET, 12.0);
+    public void givenZeroPoint08FeetAnd1InchWithEnum_ShouldReturnEqualLength() {
+        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.FEET, 0.08);
         QuantityComparator toInch = new QuantityComparator(LengthComparision.INCH, 1.0);
         Assert.assertTrue(fromFeet.compareTo(fromFeet, toInch));
     }
@@ -22,7 +22,7 @@ public class QuantityComparatorTest {
     @Test
     public void given1YardsAnd3FeetWithEnum_ShouldReturnEqualLength() {
         QuantityComparator fromYards = new QuantityComparator(LengthComparision.YARDS, 1.0);
-        QuantityComparator toFeet = new QuantityComparator(LengthComparision.FEET, 0.33);
+        QuantityComparator toFeet = new QuantityComparator(LengthComparision.FEET, 3.0);
         Assert.assertTrue(fromYards.compareTo(fromYards, toFeet));
     }
 
@@ -36,7 +36,7 @@ public class QuantityComparatorTest {
     @Test
     public void given1YardsAnd36InchesWithEnum_ShouldReturnEqualLength() {
         QuantityComparator fromYards = new QuantityComparator(LengthComparision.YARDS, 1.0);
-        QuantityComparator toInch = new QuantityComparator(LengthComparision.YARDS, 36);
+        QuantityComparator toInch = new QuantityComparator(LengthComparision.INCH, 36);
         Assert.assertTrue(fromYards.compareTo(fromYards, toInch));
     }
 
@@ -112,4 +112,35 @@ public class QuantityComparatorTest {
         QuantityComparator toCentiMeter = new QuantityComparator(LengthComparision.CM, 5.0);
         Assert.assertTrue(fromInch.compareTo(fromInch,toCentiMeter));
     }
+
+    @Test
+    public void given2InchAnd2Inch_ShouldReturnEqualSum() {
+        QuantityComparator firstValue = new QuantityComparator(LengthComparision.INCH, 2.0);
+        QuantityComparator secondValue = new QuantityComparator(LengthComparision.INCH, 2.0);
+        Assert.assertEquals(4,firstValue.AddQuantities(firstValue,secondValue),0.0);
+    }
+
+    @Test
+    public void given1FeetAnd2Inch_ShouldReturnEqualSum() {
+        QuantityComparator firstValue = new QuantityComparator(LengthComparision.FEET, 1.0);
+        QuantityComparator secondValue = new QuantityComparator(LengthComparision.INCH, 2.0);
+        Assert.assertEquals(14,firstValue.AddQuantities(firstValue,secondValue),0.0);
+    }
+
+
+    @Test
+    public void given1FeetAnd1Feet_ShouldReturnEqualSum() {
+        QuantityComparator firstValue = new QuantityComparator(LengthComparision.FEET, 1.0);
+        QuantityComparator secondValue = new QuantityComparator(LengthComparision.FEET, 1.0);
+        Assert.assertEquals(24,firstValue.AddQuantities(firstValue,secondValue),0.0);
+    }
+
+
+    @Test
+    public void given2InchAnd2Point5CM_ShouldReturnEqualSum() {
+        QuantityComparator firstValue = new QuantityComparator(LengthComparision.INCH, 2.0);
+        QuantityComparator secondValue = new QuantityComparator(LengthComparision.CM, 2.5);
+        Assert.assertEquals(3,firstValue.AddQuantities(firstValue,secondValue),0.0);
+    }
+
 }
