@@ -90,4 +90,26 @@ public class QuantityComparatorTest {
         QuantityComparator toFeet = new QuantityComparator(LengthComparision.FEET, 1.0);
         Assert.assertFalse(fromInch.equals(toFeet));
     }
+
+    @Test
+    public void given1FeetAnd1Yard_ShouldReturnNonEquality() {
+        QuantityComparator fromFeet = new QuantityComparator(LengthComparision.FEET, 1.0);
+        QuantityComparator toYards = new QuantityComparator(LengthComparision.YARDS, 1.0);
+        Assert.assertFalse(fromFeet.equals(toYards));
+    }
+
+    @Test
+    public void given1InchAnd1Yards_ShouldReturnNonEquality() {
+        QuantityComparator fromInch = new QuantityComparator(LengthComparision.INCH, 1.0);
+        QuantityComparator toYards = new QuantityComparator(LengthComparision.YARDS, 1.0);
+        Assert.assertFalse(fromInch.equals(toYards));
+    }
+
+
+    @Test
+    public void given2InchAndCM_ShouldReturnEqualLength() {
+        QuantityComparator fromInch = new QuantityComparator(LengthComparision.INCH, 2.0);
+        QuantityComparator toCentiMeter = new QuantityComparator(LengthComparision.CM, 5.0);
+        Assert.assertTrue(fromInch.compareTo(fromInch,toCentiMeter));
+    }
 }

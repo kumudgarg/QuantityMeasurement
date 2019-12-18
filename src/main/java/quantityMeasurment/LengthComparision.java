@@ -2,7 +2,7 @@ package quantityMeasurment;
 
 public enum LengthComparision {
 
-    INCH(1.0), FEET(12.0), YARDS(36.0);
+    INCH(1.0), FEET(12.0), YARDS(36.0), CM(0.4);
 
 
     private final double baseUnit;

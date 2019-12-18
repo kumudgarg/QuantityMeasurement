@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantityMeasurment.QuantityComparatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-12-18T11:12:22" hostname="admin123-desktop" time="0.007">
+<testsuite name="quantityMeasurment.QuantityComparatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-18T11:31:19" hostname="admin123-desktop" time="0.001">
   <properties/>
-  <testcase name="given1InchAndZeroPoint027YardsWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.003"/>
-  <testcase name="given1YardsAnd36InchesWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given12FeetAnd1InchWithEnum_ShouldreturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="givenNullQuantityComparator_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="givenQuantityComparatorClassType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
-  <testcase name="given1FeetAnd12InchWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given1FeetAndZeroPoint33YardsWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="givenQuantityComparatorObjectType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="givenQuantityComparatorValueType_ShouldReturnBooleanEquality" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
-  <testcase name="given1YardsAnd3FeetWithEnum_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.0"/>
+  <testcase name="given2InchAndCM_ShouldReturnEqualLength" classname="quantityMeasurment.QuantityComparatorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
