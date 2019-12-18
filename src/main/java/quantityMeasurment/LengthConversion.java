@@ -1,6 +1,6 @@
 package quantityMeasurment;
 
-public enum LengthConversion {
+public enum LengthConversion implements IQuantityConvertion {
     FEET_TO_INCH {
         @Override
         public boolean convert(double firstConversionValue, double secondConversionValue) {
@@ -34,12 +34,15 @@ public enum LengthConversion {
     INCHES_TO_YARD {
         @Override
         public boolean convert(double firstConversionValue, double secondConversionValue) {
-            return Double.compare(firstConversionValue, Math.round(secondConversionValue * YARD_FEET_MULTIPLIER * FEET_INCH_MULTIPLIER)) == 0;
-
+            return Double.compare(firstConversionValue, Math.round(secondConversionValue * YARD_FEET_MULTIPLIER )) == 0;
         }
     };
 
-    public abstract boolean convert(double firstConversionValue, double secondConversionValue);
+    public  double firstConversionValue;
+    public  double secondConversionValue;
+
+    LengthConversion() {
+    }
 
     public final double FEET_INCH_MULTIPLIER = 12;
     public static final double YARD_FEET_MULTIPLIER = 3;
