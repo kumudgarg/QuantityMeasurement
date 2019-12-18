@@ -37,10 +37,6 @@ public enum LengthConversion implements IQuantityConvertion {
             return Double.compare(firstConversionValue, Math.round(secondConversionValue * YARD_FEET_MULTIPLIER )) == 0;
         }
     };
-
-    public  double firstConversionValue;
-    public  double secondConversionValue;
-
     LengthConversion() {
     }
 
