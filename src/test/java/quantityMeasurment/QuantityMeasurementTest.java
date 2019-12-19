@@ -201,5 +201,18 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(fromFh.compareTo(fromFh, toCelsius));
     }
 
+    @Test
+    public void givenZeroPoint08FeetAnd1KgWithEnum_ShouldReturnBooleanEquality() {
+        QuantityMeasurement fromFeet = new QuantityMeasurement(MeasurementOperations.FEET, 0.08);
+        QuantityMeasurement toKg = new QuantityMeasurement(MeasurementOperations.KG, 1.0);
+        Assert.assertFalse(fromFeet.compareTo(fromFeet, toKg));
+    }
+
+    @Test
+    public void given1FeetAnd1Litres_ShouldReturnZero() {
+        QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.FEET, 1.0);
+        QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.Litre, 1.0);
+        Assert.assertEquals(0, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+    }
 
 }
