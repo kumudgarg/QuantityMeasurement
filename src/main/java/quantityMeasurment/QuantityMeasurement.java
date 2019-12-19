@@ -4,20 +4,30 @@ public class QuantityMeasurement {
 
 
     public double value;
-    public MeasurementOperations compare;
+    public MeasurementOperations operations;
+    private Compare compare;
+    private AddQuantity addition;
 
     public QuantityMeasurement(MeasurementOperations measurementOperations, double value) {
-        this.compare = measurementOperations;
+        this.operations = measurementOperations;
         this.value = value;
+        compare = new Compare();
+        addition = new AddQuantity();
+    }
+
+    public  boolean compareTo(QuantityMeasurement comparator1, QuantityMeasurement comparator2)
+    {
+        return compare.compareTo(comparator1,comparator2);
     }
 
 
-    public boolean compareTo(QuantityMeasurement converter1, QuantityMeasurement converter2) {
-        return compare.compareTo(converter1, converter2);
+    public double addQuantities(QuantityMeasurement comparator1, QuantityMeasurement comparator2)
+    {
+        return addition.AddQuantities(comparator1,comparator2);
     }
 
-    public double AddQuantities(QuantityMeasurement comparator1, QuantityMeasurement comparator2) {
-        return compare.AddQuantities(comparator1, comparator2);
+    public boolean temperatureComparision(QuantityMeasurement comparator1, QuantityMeasurement comparator2) throws QuantityMeasurmentException {
+        return compare.temperatureComparision(comparator1,comparator2);
     }
 
     @Override
@@ -26,6 +36,6 @@ public class QuantityMeasurement {
         if (o == null || getClass() != o.getClass()) return false;
         QuantityMeasurement that = (QuantityMeasurement) o;
         return Double.compare(that.value, value) == 0 &&
-                compare == that.compare;
+                operations == that.operations;
     }
 }

@@ -117,14 +117,14 @@ public class QuantityMeasurementTest {
     public void given2InchAnd2Inch_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.INCH, 2.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.INCH, 2.0);
-        Assert.assertEquals(4, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(4, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
     @Test
     public void given1FeetAnd2Inch_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.FEET, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.INCH, 2.0);
-        Assert.assertEquals(14, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(14, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
 
@@ -132,7 +132,7 @@ public class QuantityMeasurementTest {
     public void given1FeetAnd1Feet_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.FEET, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.FEET, 1.0);
-        Assert.assertEquals(24, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(24, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
 
@@ -140,7 +140,7 @@ public class QuantityMeasurementTest {
     public void given2InchAnd2Point5CM_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.INCH, 2.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.CM, 2.5);
-        Assert.assertEquals(3, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(3, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
     @Test
@@ -162,14 +162,14 @@ public class QuantityMeasurementTest {
     public void given1GallonAnd3Point78Litres_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.GALLON, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.Litre, 3.78);
-        Assert.assertEquals(7.56, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(7.56, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
     @Test
     public void given1LitresAnd1000ML_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.Litre, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.ML, 1000);
-        Assert.assertEquals(2, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(2, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
 
@@ -191,14 +191,30 @@ public class QuantityMeasurementTest {
     public void given1TonneAnd1000Gms_ShouldReturnEqualSum() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.TONNE, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.GRAMS, 1000);
-        Assert.assertEquals(1001, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(1001, firstValue.addQuantities(firstValue, secondValue), 0.0);
     }
 
     @Test
     public void given212FahrenheitAnd100Celsius_ShouldReturnEqualTemperature() {
-        QuantityMeasurement fromFh = new QuantityMeasurement(MeasurementOperations.FAHRENHEIT, 212.0);
-        QuantityMeasurement toCelsius = new QuantityMeasurement(MeasurementOperations.CELSIUS, 100);
-        Assert.assertTrue(fromFh.compareTo(fromFh, toCelsius));
+
+        try {
+            QuantityMeasurement fromFh = new QuantityMeasurement(MeasurementOperations.FAHRENHEIT, 212.0);
+            QuantityMeasurement toCelsius = new QuantityMeasurement(MeasurementOperations.CELSIUS, 100);
+            Assert.assertTrue(fromFh.temperatureComparision(fromFh, toCelsius));
+        } catch (QuantityMeasurmentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void given1CelsiusAnd33Point8Fahrenheit_ShouldReturnEqualTemperature() {
+        try {
+            QuantityMeasurement fromCelsius = new QuantityMeasurement(MeasurementOperations.CELSIUS, 1.0);
+            QuantityMeasurement toFh = new QuantityMeasurement(MeasurementOperations.FAHRENHEIT, 33.8);
+            Assert.assertTrue(fromCelsius.temperatureComparision(fromCelsius, toFh));
+        } catch (QuantityMeasurmentException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -212,7 +228,19 @@ public class QuantityMeasurementTest {
     public void given1FeetAnd1Litres_ShouldReturnZero() {
         QuantityMeasurement firstValue = new QuantityMeasurement(MeasurementOperations.FEET, 1.0);
         QuantityMeasurement secondValue = new QuantityMeasurement(MeasurementOperations.Litre, 1.0);
-        Assert.assertEquals(0, firstValue.AddQuantities(firstValue, secondValue), 0.0);
+        Assert.assertEquals(0, firstValue.addQuantities(firstValue, secondValue), 0.0);
+    }
+
+    @Test
+    public void given1CelsiusAnd1Feet_ShouldThrowException() {
+        try {
+            QuantityMeasurement fromCelsius = new QuantityMeasurement(MeasurementOperations.CELSIUS, 1.0);
+            QuantityMeasurement toFh = new QuantityMeasurement(MeasurementOperations.FEET, 33.8);
+            fromCelsius.temperatureComparision(fromCelsius,toFh);
+
+        } catch (QuantityMeasurmentException e) {
+            Assert.assertEquals(QuantityMeasurmentException.ExceptionType.QUANTITY_UN_EQUALITY,e.type);
+        }
     }
 
 }
