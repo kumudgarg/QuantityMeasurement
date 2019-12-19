@@ -4,8 +4,9 @@ public enum QuantityComparision {
 
 
     INCH(QuantityType.LENGTH, 1.0), FEET(QuantityType.LENGTH, 12.0),
-
-    YARDS(QuantityType.LENGTH, 36.0), CM(QuantityType.LENGTH, 0.4);
+    YARDS(QuantityType.LENGTH, 36.0), CM(QuantityType.LENGTH, 0.4),
+    Litre(QuantityType.VOLUMES,1000), ML(QuantityType.VOLUMES,1),
+    GALLON(QuantityType.VOLUMES, 3780);
 
 
     public final double lengthUnit;

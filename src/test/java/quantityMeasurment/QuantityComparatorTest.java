@@ -143,4 +143,19 @@ public class QuantityComparatorTest {
         Assert.assertEquals(3,firstValue.AddQuantities(firstValue,secondValue),0.0);
     }
 
+    @Test
+    public void given1GallonsAnd3Point78Litres_ShouldReturnBooleanEquality() {
+        QuantityComparator firstValue = new QuantityComparator(QuantityComparision.GALLON, 1.0);
+        QuantityComparator secondValue = new QuantityComparator(QuantityComparision.Litre, 3.78);
+        Assert.assertTrue(firstValue.compareTo(firstValue,secondValue));
+    }
+
+
+    @Test
+    public void given1LitresAnd1000ML_ShouldReturnBooleanEquality() {
+        QuantityComparator firstValue = new QuantityComparator(QuantityComparision.Litre, 1.0);
+        QuantityComparator secondValue = new QuantityComparator(QuantityComparision.ML, 1000);
+        Assert.assertTrue(firstValue.compareTo(firstValue,secondValue));
+    }
+
 }
