@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantityMeasurment.QuantityComparatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-19T04:24:19" hostname="admin123-desktop" time="0.002">
-  <properties/>
-  <testcase name="given1TonneAnd1000Gms_ShouldReturnEqualSum" classname="quantityMeasurment.QuantityComparatorTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
