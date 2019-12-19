@@ -172,4 +172,26 @@ public class QuantityComparatorTest {
         Assert.assertEquals(2,firstValue.AddQuantities(firstValue,secondValue),0.0);
     }
 
+
+    @Test
+    public void given1KgAnd1000Gms_ShouldReturnEqualWeight() {
+        QuantityComparator fromKg = new QuantityComparator(QuantityComparision.KG, 1.0);
+        QuantityComparator toGrams = new QuantityComparator(QuantityComparision.GRAMS, 1000);
+        Assert.assertTrue(fromKg.compareTo(fromKg,toGrams));
+    }
+
+    @Test
+    public void given1TonneAnd1000KGms_ShouldReturnEqualWeight() {
+        QuantityComparator fromTonns = new QuantityComparator(QuantityComparision.TONNE, 1.0);
+        QuantityComparator toKGrams = new QuantityComparator(QuantityComparision.KG, 1000);
+        Assert.assertTrue(fromTonns.compareTo(fromTonns,toKGrams));
+    }
+
+    @Test
+    public void given1TonneAnd1000Gms_ShouldReturnEqualSum() {
+        QuantityComparator firstValue = new QuantityComparator(QuantityComparision.TONNE, 1.0);
+        QuantityComparator secondValue = new QuantityComparator(QuantityComparision.GRAMS, 1000);
+        Assert.assertEquals(1001,firstValue.AddQuantities(firstValue,secondValue),0.0);
+    }
+
 }
